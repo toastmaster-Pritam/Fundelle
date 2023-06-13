@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
-import { logo, menu, search, thirdweb } from "../assets";
+import { logo, menu, thirdweb } from "../assets";
 import { navlinks } from "../constants";
 import { useStateContext } from "../context";
 import Searchbar from "./Searchbar";
@@ -16,12 +16,8 @@ const Navbar = () => {
 
   return (
     <div className="flex md:flex-row  flex-col-reverse  justify-between mb-[35px] gap-6">
-      <div className="lg:flex1 flex flex-row py-2 pl-4 pr-2 max-w-[458px] h-[52px] bg-[#1c1c24] rounded-[100px]">
-       <Searchbar/>
-        <div className="h-full w-[72px] rounded-[20px] bg-[#4acd8d] flex justify-center items-center cursor-pointer ">
-          <img src={search} className="w-[15px] h-[15px] object-contain" />
-        </div>
-      </div>
+    <Searchbar />
+
       <div className="sm:flex hidden flex-row justify-end gap-4">
         <Button
           btnType="button"
