@@ -91,6 +91,7 @@ export const StateContextProvider = ({ children }) => {
     }
     return parsedDonation;
   };
+
   return (
     <StateContext.Provider
       value={{

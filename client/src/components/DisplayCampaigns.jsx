@@ -2,15 +2,18 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { loader } from "../assets";
 import FundCard from "./FundCard";
+import { daysLeft } from "../utils";
 
 const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
   const navigate = useNavigate();
 
   const handleNavigate = (campaign) => {
-    navigate(`/campaign-details/${campaign.title}`, { state: campaign });
+    const remainingDays=daysLeft(campaign.deadline)
+    if(remainingDays<=0) navigate("/")
+    else navigate(`/campaign-details/${campaign.title}`, { state: campaign });
   };
   return (
-    
+
 
     <div>
       <h1 className="font-epilogue font-semibold text-[18px] text-white text-left">
